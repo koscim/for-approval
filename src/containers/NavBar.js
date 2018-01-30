@@ -4,9 +4,11 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import NavItem from '../components/NavItem';
+
 
 const NavBar = (props) => {
-  return(
+  return (
     <nav className="navbar navbar-dark bg-dark">
       <a className="navbar-brand" href="#">For Approval</a>
       <button className="navbar-toggler" type="button" data-toggle="collapse"
@@ -34,15 +36,9 @@ const NavBar = (props) => {
               <a className="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/about">About</Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/topics">Topics</Link>
-          </li>
+          <NavItem link='/' title='Home'/>
+          <NavItem link='/about' title='About'/>
+          <NavItem link='/topics' title='Topics'/>
         </ul>
         <form className="form-inline my-2 my-md-0">
           <input className="form-control" type="text" placeholer="Search" aria-label="Search"/>
