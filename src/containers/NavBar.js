@@ -5,7 +5,7 @@ import {
   Link
 } from 'react-router-dom';
 import NavItem from '../components/NavItem';
-
+import NavDropdown from './NavDropdown';
 
 const NavBar = (props) => {
   return (
@@ -18,24 +18,7 @@ const NavBar = (props) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarForApproval">
         <ul className="navbar-nav mr-auto">
-          <li className="nav-item active">
-            <a className="nav-link" href="#">Home<span className="sr-only">(current)</span></a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="#">Link</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li className="nav-item dropdown">
-            <a className="nav-link dropdown-toggle" href="http://example.com" id="dropdown01"
-              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div className="dropdown-menu" aria-labelledby="dropdown01">
-              <a className="dropdown-item" href="#">Action</a>
-              <a className="dropdown-item" href="#">Another action</a>
-              <a className="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
+          <NavDropdown id='dropdown01' title='Dropdown' items={['Action', 'Another action', 'Something else here']}/>
           <NavItem link='/' title='Home'/>
           <NavItem link='/about' title='About'/>
           <NavItem link='/topics' title='Topics'/>
@@ -49,3 +32,13 @@ const NavBar = (props) => {
 }
 
 export default NavBar;
+
+// <li className="nav-item active">
+//   <a className="nav-link" href="#">Home<span className="sr-only">(current)</span></a>
+// </li>
+// <li className="nav-item">
+//   <a className="nav-link" href="#">Link</a>
+// </li>
+// <li className="nav-item">
+//   <a className="nav-link disabled" href="#">Disabled</a>
+// </li>
