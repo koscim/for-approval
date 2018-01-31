@@ -32,17 +32,17 @@ const Topics = ({ match }) => (
     <ul>
       <li>
         <Link to={`${match.url}/rendering`}>
-          Rendering with React
+          Prepare
         </Link>
       </li>
       <li>
         <Link to={`${match.url}/components`}>
-          Components
+          Review
         </Link>
       </li>
       <li>
         <Link to={`${match.url}/props-v-state`}>
-          Props v. State
+          Approve
         </Link>
       </li>
     </ul>
