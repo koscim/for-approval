@@ -31,18 +31,18 @@ const Topics = ({ match }) => (
     <h2>Topics</h2>
     <ul>
       <li>
-        <Link to={`${match.url}/rendering`}>
-          Rendering with React
+        <Link to={`${match.url}/prepare`}>
+          Prepare
         </Link>
       </li>
       <li>
-        <Link to={`${match.url}/components`}>
-          Components
+        <Link to={`${match.url}/review`}>
+          Review
         </Link>
       </li>
       <li>
-        <Link to={`${match.url}/props-v-state`}>
-          Props v. State
+        <Link to={`${match.url}/approve`}>
+          Approve
         </Link>
       </li>
     </ul>
@@ -59,14 +59,7 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Welcome to React</h1>
-          </header>
           <NavBar/>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
           <Route exact path='/' component={Home}/>
           <Route path='/about' component={About}/>
           <Route path='/topics/' component={Topics}/>
@@ -77,3 +70,11 @@ class App extends Component {
 }
 
 export default App;
+
+// <header className="App-header">
+//   <img src={logo} className="App-logo" alt="logo" />
+//   <h1 className="App-title">Welcome to React</h1>
+// </header>
+// <p className="App-intro">
+//   To get started, edit <code>src/App.js</code> and save to reload.
+// </p>
