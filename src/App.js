@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './containers/NavBar';
+import HomeContainer from './containers/HomeContainer';
 import {
   BrowserRouter as Router,
   Route,
@@ -60,7 +61,7 @@ class App extends Component {
       <Router>
         <div className="App">
           <NavBar/>
-          <Route exact path='/' component={Home}/>
+          <Route exact path='/' component={HomeContainer}/>
           <Route path='/about' component={About}/>
           <Route path='/topics/' component={Topics}/>
         </div>
