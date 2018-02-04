@@ -1,5 +1,8 @@
 # For Approval
 
+[![CircleCI](https://circleci.com/gh/koscim/for-approval/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/koscim/for-approval)
+[![Code Climate](https://codeclimate.com/github/koscim/for-approval/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
+
 For Approval is a technical review tracking and analytics tool that leverages d3.js with React on Rails to intelligently assign work according to certifications and personal time off.
 
 ## CircleCI and CodeClimate
@@ -27,9 +30,6 @@ git push heroku master
 ```
 
 Automatic deployment was enabled on the heroku application with the option `Wait for CI to pass before deploy` for continuous deployment.
-
-[![CircleCI](https://circleci.com/gh/koscim/for-approval/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/koscim/for-approval)
-[![Code Climate](https://codeclimate.com/github/koscim/for-approval/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
