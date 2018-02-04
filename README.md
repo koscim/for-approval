@@ -18,7 +18,7 @@ test:
     - npm install -g codeclimate-test-reporter
     - codeclimate-test-reporter < coverage/lcov.info
 ```
-Node v6 is used because create-react-app only works with v6 and above. The coverage report `coverage/lcov.info` is generated using `npm test -- --coverage` and after `codeclimate-test-reporter` is installed, the coverage report is sent to CodeClimate.
+Node v6 is used because create-react-app only works with v6 and above. The coverage report `coverage/lcov.info` is generated using `npm test -- --coverage` and after `codeclimate-test-reporter` is installed, the coverage report is sent to CodeClimate for Test Coverage feedback.
 
 ## Heroku Deployment Setup
 
