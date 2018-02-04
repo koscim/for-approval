@@ -1,6 +1,5 @@
 [![CircleCI](https://circleci.com/gh/koscim/for-approval/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/koscim/for-approval)
 [![Code Climate](https://codeclimate.com/github/koscim/for-approval/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
-[![Test Coverage](https://codeclimate.com/github/codeclimate/codeclimate/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
