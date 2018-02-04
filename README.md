@@ -35,7 +35,9 @@ Automatic deployment was enabled on the heroku application with the option `Wait
 
 This application uses Cypress.io as an Automated Acceptance Testing Framework.
 
-Cypress.io was setup using ```npm install --save-dev cypress``` and requires no configuration changes to run.
+Cypress.io was setup using ```npm install --save-dev cypress``` and requires no configuration changes to run test cases.
+
+To run test cases the command ```cypress run``` is used.
 
 ## Create React App
 
