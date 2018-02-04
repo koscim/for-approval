@@ -37,7 +37,7 @@ This application uses Cypress.io as an Automated Acceptance Testing Framework.
 
 Cypress.io was setup using ```npm install --save-dev cypress``` and requires no configuration changes to run test cases.
 
-To run test cases the command ```cypress run``` is used.
+To run test cases, the command ```cypress run``` is run in the command line.
 
 ## Create React App
 
