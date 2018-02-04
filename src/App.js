@@ -27,33 +27,30 @@ const Topic = ({ match }) => (
   </div>
 )
 
-const Topics = ({ match }) => (
-  <div>
-    <h2>Topics</h2>
-    <ul>
+const Topics = ({ match }) => {
+  const TOPICS = ['prepare', 'review', 'approve']
+  let links = TOPICS.map(topic => {
+    return (
       <li>
-        <Link to={`${match.url}/prepare`}>
-          Prepare
+        <Link to={`${match.url}/${topic}`}>
+          {topic.toUpperCase()}
         </Link>
       </li>
-      <li>
-        <Link to={`${match.url}/review`}>
-          Review
-        </Link>
-      </li>
-      <li>
-        <Link to={`${match.url}/approve`}>
-          Approve
-        </Link>
-      </li>
-    </ul>
-
-    <Route path={`${match.url}/:topicId`} component={Topic}/>
-    <Route exact path={match.url} render={() => (
-      <h3>Please select a topic.</h3>
-    )}/>
-  </div>
-)
+    )
+  })
+  return (
+    <div>
+      <h2>Topics</h2>
+      <ul>
+        {links}
+      </ul>
+      <Route path={`${match.url}/:topicId`} component={Topic}/>
+      <Route exact path={match.url} render={() => (
+        <h3>Please select a topic.</h3>
+      )}/>
+    </div>
+  )
+}
 
 class App extends Component {
   render() {
