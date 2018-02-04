@@ -1,3 +1,5 @@
+[![Code Climate](https://codeclimate.com/github/koscim/for-approval>/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
