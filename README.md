@@ -31,6 +31,14 @@ $ git push heroku master
 
 Automatic deployment was enabled on the heroku application with the option `Wait for CI to pass before deploy` for continuous deployment.
 
+## Cypress.io
+
+This application uses Cypress.io as an Automated Acceptance Testing Framework.
+
+Cypress.io was setup using ```npm install --save-dev cypress``` and requires no configuration changes to run.
+
+## Create React App
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
