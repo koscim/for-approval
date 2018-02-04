@@ -1,4 +1,4 @@
-## For Approval
+# For Approval
 
 For Approval is a technical review tracking and analytics tool that leverages d3.js with React on Rails to intelligently assign work according to certifications and personal time off.
 
