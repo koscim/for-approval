@@ -25,8 +25,8 @@ Node v6 is used because create-react-app only works with v6 and above. The cover
 The React application was deployed on heroku using the following buildpack and terminal commands:
 
 ```
-heroku create for-approval —-buildpack https://github.com/mars/create-react-app-buildpack.git
-git push heroku master
+$ heroku create for-approval —-buildpack https://github.com/mars/create-react-app-buildpack.git
+$ git push heroku master
 ```
 
 Automatic deployment was enabled on the heroku application with the option `Wait for CI to pass before deploy` for continuous deployment.
