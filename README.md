@@ -17,6 +17,17 @@ test:
 ```
 Node v6 is used because create-react-app only works with v6 and above. The coverage report `coverage/lcov.info` is generated using `npm test -- --coverage` and after `codeclimate-test-reporter` is installed, the coverage report is sent to CodeClimate.
 
+## Heroku Deployment Setup
+
+The React application was deployed on heroku using the following buildpack and terminal commands:
+
+```
+heroku create for-approval —-buildpack https://github.com/mars/create-react-app-buildpack.git
+git push heroku master
+```
+
+Automatic deployment was enabled on the heroku application with the option `Wait for CI to pass before deploy` for continuous deployment.
+
 [![CircleCI](https://circleci.com/gh/koscim/for-approval/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/koscim/for-approval)
 [![Code Climate](https://codeclimate.com/github/koscim/for-approval/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
 
