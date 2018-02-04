@@ -2,6 +2,21 @@
 
 For Approval is a technical review tracking and analytics tool that leverages d3.js with React on Rails to intelligently assign work according to certifications and personal time off.
 
+## CircleCI and CodeClimate
+This project uses CircleCI for continuous integration with the following `circle.yml` configuration 
+```
+machine:
+  node:
+    version: 6.0.0
+test:
+  override:
+    - npm test -- --coverage
+  post:
+    - npm install -g codeclimate-test-reporter
+    - codeclimate-test-reporter < coverage/lcov.info
+```
+Node v6 is used because create-react-app only works with v6 and above. The coverage report `coverage/lcov.info` is generated using `npm test -- --coverage` and after `codeclimate-test-reporter` is installed, the coverage report is sent to CodeClimate.
+
 [![CircleCI](https://circleci.com/gh/koscim/for-approval/tree/master.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/koscim/for-approval)
 [![Code Climate](https://codeclimate.com/github/koscim/for-approval/badges/gpa.svg)](https://codeclimate.com/github/koscim/for-approval)
 
