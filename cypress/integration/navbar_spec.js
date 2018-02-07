@@ -13,26 +13,25 @@ describe('NavBar', () => {
 
   describe('when the navbar-toggler is toggled', () => {
     beforeEach(() => {
-      cy.get('.navbar').children('button').click();
+      cy.toggleNavBar();
     })
     it('should have a visible div with expanded elements', () => {
       cy.get('.navbar').children('div').should('be.visible');
-    })
+    });
     it('should have a dropdown element', () => {
       cy.get('#dropdown01').should('be.visible');
-    })
+    });
     it('should have four nav-links', () => {
       cy.get('.nav-link').should('have.length', 4);
-    })
-  })
+    });
+  });
 
   describe('when the dropdown-menu in navbar is clicked', () => {
     beforeEach(() => {
-      cy.get('.navbar').children('button').click();
-      cy.get('#dropdown01').click();
-    })
+      cy.toggleActionDropdown();
+    });
     it('should have three dropdown-items', () => {
       cy.get('.dropdown-item').should('have.length', 3);
-    })
-  })
-})
+    });
+  });
+});

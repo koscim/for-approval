@@ -27,4 +27,13 @@
 Cypress.Commands.add('seedAndVisit', (seedData = []) => {
   cy.server();
   cy.visit('http://localhost:3000')
-})
+});
+
+Cypress.Commands.add('toggleNavBar', () => {
+  cy.get('.navbar').children('button').click();
+});
+
+Cypress.Commands.add('toggleActionDropdown', () => {
+  cy.toggleNavBar();
+  cy.get('#dropdown01').click();
+});
