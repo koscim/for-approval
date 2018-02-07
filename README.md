@@ -5,6 +5,17 @@
 
 For Approval is a technical review tracking and analytics tool that leverages d3.js with React on Rails to intelligently assign work according to workload, certifications, travel, and personal time off.
 
+## Dependencies
+
+* react v16.2.0
+* react-dom v16.2.0
+* react-router-dom v4.2.2
+* react-scripts v1.1.0
+
+## DevDependencies
+
+* cypress v1.4.1
+
 ## CircleCI and CodeClimate
 This project uses CircleCI for continuous integration with the following `circle.yml` configuration 
 ```
@@ -41,7 +52,7 @@ To run test cases, the command ```cypress run``` is run in the command line.
 
 ## React Router v4
 
-This application uses ```react-router-dom: 4.2.2```
+This application uses ```react-router-dom v4.2.2```.
 
 
 ## Create React App
