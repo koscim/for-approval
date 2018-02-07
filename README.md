@@ -52,8 +52,7 @@ To run test cases, the command ```cypress run``` is run in the command line.
 
 ## React Router v4
 
-This application uses ```react-router-dom v4.2.2```.
-
+This application uses ```react-router-dom v4.2.2``` for declarative routing.
 
 ## Create React App
 
