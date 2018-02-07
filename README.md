@@ -39,6 +39,11 @@ Cypress.io was setup using ```npm install --save-dev cypress``` and requires no 
 
 To run test cases, the command ```cypress run``` is run in the command line.
 
+## React Router v4
+
+This application uses ```react-router-dom: 4.2.2```
+
+
 ## Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
