@@ -18,7 +18,7 @@ const NavBar = (props) => {
       </button>
       <div className="collapse navbar-collapse" id="navbarForApproval">
         <ul className="navbar-nav mr-auto">
-          <NavDropdown id='dropdown01' title='Dropdown' items={['Action', 'Another action', 'Something else here']}/>
+          <NavDropdown id='dropdown01' title='Actions' items={['Prepare', 'Review', 'Approve']}/>
           <NavItem link='/' title='Home'/>
           <NavItem link='/about' title='About'/>
           <NavItem link='/topics' title='Topics'/>
