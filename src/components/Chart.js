@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { scaleBand, scaleLinear } from 'd3-scale';
 import data from '../data';
 import Axes from './Axes';
+import Bars from './Bars';
 
 export default class Chart extends Component {
   constructor() {
@@ -31,6 +32,13 @@ export default class Chart extends Component {
         <Axes
           scales={{ xScale, yScale }}
           margins={margins}
+          svgDimensions={svgDimensions}
+        />
+        <Bars
+          scales={{ xScale, yScale }}
+          margins={margins}
+          data={data}
+          maxValue={maxValue}
           svgDimensions={svgDimensions}
         />
       </svg>
