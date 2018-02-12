@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { scaleBand, scaleLinear } from 'd3-scale';
 import data from '../data';
-import Axes from './Axes';
-import Bars from './Bars';
+import Axes from './Chart/Axes';
+import Bars from './Chart/Bars';
+import ResponsiveWrapper from '../containers/ResponsiveWrapper';
 
-export default class Chart extends Component {
+class Chart extends Component {
   constructor() {
     super()
     this.xScale = scaleBand();
@@ -13,14 +14,17 @@ export default class Chart extends Component {
 
   render() {
     const margins = { top: 50, right: 20, bottom: 100, left: 60 }
-    const svgDimensions = { width: 800, height: 500 }
+    const svgDimensions = {
+      width: Math.max(this.props.parentWidth, 300),
+      height: 500
+    }
 
     const maxValue = Math.max(...data.map(d => d.value));
 
     // scaleBand type
     const xScale = this.xScale
       .padding(0.5)
-      .domain(data.map(d => d.title))
+      .domain(data.map(d => d.employee))
       .range([margins.left, svgDimensions.width - margins.right]);
 
     const yScale = this.yScale
@@ -45,3 +49,5 @@ export default class Chart extends Component {
     )
   }
 }
+
+export default ResponsiveWrapper(Chart);
