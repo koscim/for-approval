@@ -4,7 +4,6 @@ import Chart from '../components/Chart';
 class TrackContainer extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {

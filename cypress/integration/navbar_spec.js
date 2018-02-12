@@ -22,7 +22,7 @@ describe('NavBar', () => {
       cy.get('#dropdown01').should('be.visible');
     });
     it('should have four nav-links', () => {
-      cy.get('.nav-link').should('have.length', 4);
+      cy.get('.nav-link').should('have.length', 5);
     });
   });
 

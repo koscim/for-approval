@@ -19,10 +19,10 @@ const NavBar = (props) => {
       <div className="collapse navbar-collapse" id="navbarForApproval">
         <ul className="navbar-nav mr-auto">
           <NavDropdown id='dropdown01' title='Actions' items={['Prepare', 'Review', 'Approve']}/>
-          <NavItem link='/' title='Home'/>
-          <NavItem link='/about' title='About'/>
-          <NavItem link='/topics' title='Topics'/>
-          <NavItem link='/track' title='Track'/>
+          <NavItem id='home' link='/' title='Home'/>
+          <NavItem id='about' link='/about' title='About'/>
+          <NavItem id='topics' link='/topics' title='Topics'/>
+          <NavItem id='track' link='/track' title='Track'/>
         </ul>
         <form className="form-inline my-2 my-md-0">
           <input className="form-control" type="text" placeholer="Search" aria-label="Search"/>
