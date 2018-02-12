@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './containers/NavBar';
 import HomeContainer from './containers/HomeContainer';
+import TrackContainer from './containers/TrackContainer';
 import {
   BrowserRouter as Router,
   Route,
@@ -63,6 +64,7 @@ class App extends Component {
           <Route exact path='/' component={HomeContainer}/>
           <Route path='/about' component={About}/>
           <Route path='/topics/' component={Topics}/>
+          <Route path='/track' component={TrackContainer}/>
         </div>
       </Router>
     );
