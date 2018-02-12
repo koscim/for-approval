@@ -11,6 +11,10 @@ For Approval is a technical review tracking and analytics tool that leverages d3
 * react-dom v16.2.0
 * react-router-dom v4.2.2
 * react-scripts v1.1.0
+* d3-axis v1.0.8
+* d3-interpolate v1.1.6
+* d3-scale v2.0.0
+* d3-selection v1.3.0
 
 ## DevDependencies
 
@@ -53,6 +57,19 @@ To run test cases, the command ```cypress run``` is run in the command line.
 ## React Router v4
 
 This application uses ```react-router-dom v4.2.2``` for declarative routing.
+
+## d3 v4 
+
+This application uses the following modular libraries included in d3 v4.0 to create responsive charts:
+
+* d3-axis (Axes)
+* d3-interpolate (Interpolators)
+* d3-scale (Scales)
+* d3-selection (Selections)
+
+Scales (scaleBand for labels and scaleLinear for values) are created using the d3-scale module.
+Axes are created using the d3-axis module.
+Interpolators (interpolateLab for calculating color values as well as bar dimensions based on value) are created using the d3-interpolate module.
 
 ## Create React App
 
