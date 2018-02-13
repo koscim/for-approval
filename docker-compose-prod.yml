@@ -1,0 +1,11 @@
+version : '3.3'
+
+services:
+
+  time-tracker-prod:
+    container_name: time-tracker-prod
+    build:
+      context: .
+      dockerfile: Dockerfile-prod
+    ports:
+      - '80:80'

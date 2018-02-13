@@ -1,0 +1,16 @@
+version: '3.3'
+
+services:
+
+  time-tracker:
+    container_name: time-tracker
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - '.:/usr/src/app'
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
