@@ -33,7 +33,7 @@ class Pie extends Component {
       .value(d => d);
 
     let x = this.props.parentWidth / 2;
-    let y = 500;
+    let y = (svgDimensions.height / 2) + 100;
     return (
       <svg width={svgDimensions.width} height={svgDimensions.height * 2}>
         <g transform={`translate(${x}, ${y})`}>

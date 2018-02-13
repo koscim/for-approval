@@ -10,7 +10,7 @@ export default class Slice extends Component {
     let { value, fill, innerRadius = 0, outerRadius} = this.props;
 
     const path = arc()
-      .outerRadius(outerRadius)
+      .outerRadius(outerRadius - 10)
       .innerRadius(innerRadius)
 
     return (
