@@ -15,6 +15,7 @@ For Approval is a technical review tracking and analytics tool that leverages d3
 * d3-interpolate v1.1.6
 * d3-scale v2.0.0
 * d3-selection v1.3.0
+* d3-shape v1.2.0
 
 ## DevDependencies
 
@@ -66,10 +67,12 @@ This application uses the following modular libraries included in d3 v4.0 to cre
 * d3-interpolate (Interpolators)
 * d3-scale (Scales)
 * d3-selection (Selections)
+* d3-shape (Shapes)
 
-Scales (scaleBand for labels and scaleLinear for values) are created using the d3-scale module.
+Scales (scaleBand for labels and scaleLinear for values, scaleOrdinal) are created using the d3-scale module.
 Axes are created using the d3-axis module.
 Interpolators (interpolateLab for calculating color values as well as bar dimensions based on value) are created using the d3-interpolate module.
+Shapes (pie and arc) are created using the d3-shape module.
 
 ## Create React App
 
