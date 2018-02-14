@@ -4,7 +4,6 @@ import { pie } from 'd3-shape';
 import Slice from './Slice';
 import ResponsiveWrapper from '../../containers/ResponsiveWrapper';
 
-
 class Pie extends Component {
   constructor(props){
     super(props);
@@ -15,7 +14,10 @@ class Pie extends Component {
   renderSlice(value, i) {
     return (
       <Slice key={i}
+        innerRadius={Math.max(this.props.parentWidth / 4, 200) * 0.35}
         outerRadius={Math.max(this.props.parentWidth / 4, 200)}
+        cornerRadius={7}
+        padAngle={0.02}
         value={value}
         label={value.data}
         fill={this.colorScale(i)} />
@@ -34,7 +36,7 @@ class Pie extends Component {
       .value(d => d);
 
     let x = this.props.parentWidth / 2;
-    let y = (svgDimensions.height / 2) + 100;
+    let y = (svgDimensions.height / 2) + 150;
     return (
       <svg width={svgDimensions.width} height={svgDimensions.height * 2}>
         <g transform={`translate(${x}, ${y})`}>
