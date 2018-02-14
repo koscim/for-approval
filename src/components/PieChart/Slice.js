@@ -7,11 +7,13 @@ export default class Slice extends Component {
   }
 
   render() {
-    let { value, label, fill, innerRadius = 0, outerRadius} = this.props;
+    let { value, label, fill, innerRadius = 0, outerRadius, cornerRadius, padAngle} = this.props;
 
     const path = arc()
       .outerRadius(outerRadius - 10)
       .innerRadius(innerRadius)
+      .cornerRadius(cornerRadius)
+      .padAngle(padAngle)
 
     return (
       <g>
