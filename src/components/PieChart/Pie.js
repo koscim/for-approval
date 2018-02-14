@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { scaleOrdinal } from 'd3-scale';
+import { scaleOrdinal, scale } from 'd3-scale';
 import { pie } from 'd3-shape';
 import Slice from './Slice';
 import ResponsiveWrapper from '../../containers/ResponsiveWrapper';
@@ -9,7 +9,7 @@ class Pie extends Component {
   constructor(props){
     super(props);
 
-    this.colorScale = scaleOrdinal(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "d0743c", "#ff8c00"]);
+    this.colorScale = scaleOrdinal(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "d0743c", "#ff8c00", "cc1208"]);
     this.renderSlice = this.renderSlice.bind(this);
   }
   renderSlice(value, i) {
@@ -17,6 +17,7 @@ class Pie extends Component {
       <Slice key={i}
         outerRadius={Math.max(this.props.parentWidth / 4, 200)}
         value={value}
+        label={value.data}
         fill={this.colorScale(i)} />
     )
   }
