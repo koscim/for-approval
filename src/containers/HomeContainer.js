@@ -31,8 +31,8 @@ class HomeContainer extends Component {
     return (
       <div>
         <div className="App-chart-container">
-          <Chart />
           <AssignmentIndexContainer />
+          <Chart />
         </div>
       </div>
     )

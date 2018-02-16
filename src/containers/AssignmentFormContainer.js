@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import Select from '../components/Select';
 import TextField from '../components/TextField';
 import { assignmentData } from '../assignmentData';
+import data from '../data';
 
 export default class AssignmentFormContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
       errors: {},
-      firstName: '',
-      lastName: '',
-      assignment: '',
+      employeeSelected: '',
       roleSelected: '',
       roles: ['Preparer', 'Reviewer', 'Approver'],
       assignmentSelected: ''
@@ -39,13 +38,11 @@ export default class AssignmentFormContainer extends Component {
   }
   handleFormSubmit(event) {
     event.preventDefault();
-    if (this.validateInputChange(this.state.firstName, 'firstName') &
-    this.validateInputChange(this.state.lastName, 'lastName') &
+    if (this.validateInputChange(this.state.employeeSelected, 'employee') &
     this.validateInputChange(this.state.roleSelected, 'role') &
     this.validateInputChange(this.state.assignmentSelected, 'assignment')) {
       let formPayload = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
+        employeeSelected: this.state.employeeSelected,
         roleSelected: this.state.roleSelected,
         assignmentSelected: this.state.assignmentSelected
       };
@@ -57,14 +54,18 @@ export default class AssignmentFormContainer extends Component {
     event.preventDefault();
     this.setState({
       errors: {},
-      firstName: '',
-      lastName: '',
-      assignment: '',
+      employeeSelected: '',
+      assignmentSelected: '',
       roleSelected: ''
     });
   }
 
   render() {
+    let employees = data.map((employee, index) => {
+      return (
+        employee.employee
+      );
+    })
     let errorDiv;
     let errorItems;
     if (Object.keys(this.state.errors).length > 0) {
@@ -74,39 +75,36 @@ export default class AssignmentFormContainer extends Component {
       errorDiv = <div className="callout alert">{errorItems}</div>
     }
     return (
-      <form onSubmit={this.handleFormSubmit}>
+      <div className="row align-items-center justify-content-center">
         {errorDiv}
-        <TextField
-          content={this.state.firstName}
-          label='First Name'
-          name='firstName'
-          handlerFunction={this.handleInputChange}
-        />
-        <TextField
-          content={this.state.lastName}
-          label='Last Name'
-          name='lastName'
-          handlerFunction={this.handleInputChange}
-        />
-        <Select
-          handlerFunction={this.handleInputChange}
-          name='roleSelected'
-          label='Role'
-          options={this.state.roles}
-          selectedOption={this.state.roleSelected}
-        />
-        <Select
-          handlerFunction={this.handleInputChange}
-          name='assignmentSelected'
-          label='Assignment'
-          options={assignmentData}
-          selectedOption={this.state.assignmentSelected}
-        />
-        <div className="button-group">
-          <button className="btn" onClick={this.handleClearForm}>Clear</button>
-          <input className="btn btn-primary" type="submit" value="Submit" />
-        </div>
-      </form>
+        <form className="form-inline" onSubmit={this.handleFormSubmit}>
+          <Select
+            handlerFunction={this.handleInputChange}
+            name='employeeSelected'
+            label='Employee'
+            options={employees}
+            selectedOption={this.state.employeeSelected}
+          />
+          <Select
+            handlerFunction={this.handleInputChange}
+            name='roleSelected'
+            label='Role'
+            options={this.state.roles}
+            selectedOption={this.state.roleSelected}
+          />
+          <Select
+            handlerFunction={this.handleInputChange}
+            name='assignmentSelected'
+            label='Assignment'
+            options={assignmentData}
+            selectedOption={this.state.assignmentSelected}
+          />
+          <div className="button-group">
+            <button className="btn" onClick={this.handleClearForm}>Clear</button>
+            <input className="btn btn-primary" type="submit" value="Submit" />
+          </div>
+        </form>
+      </div>
     )
   }
 }

@@ -18,8 +18,8 @@ export default class AssignmentIndexContainer extends Component {
   render() {
     return (
       <div>
-        <AssignmentFormContainer trackAssignmentPayload={this.trackAssignmentPayload} />
         <AssignmentList assignmentPayload={this.state.assignmentPayload} />
+        <AssignmentFormContainer trackAssignmentPayload={this.trackAssignmentPayload} />
       </div>
     )
   }
