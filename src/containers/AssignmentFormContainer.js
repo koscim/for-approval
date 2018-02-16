@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Select from '../components/Select';
 import TextField from '../components/TextField';
+import { assignmentData } from '../assignmentData';
 
 export default class AssignmentFormContainer extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ export default class AssignmentFormContainer extends Component {
         lastName: this.state.lastName,
         roleSelected: this.state.roleSelected
       };
+      this.props.trackAssignmentPayload(formPayload);
       this.handleClearForm(event);
     }
   }
@@ -86,7 +88,7 @@ export default class AssignmentFormContainer extends Component {
           handlerFunction={this.handleInputChange}
           name='assignmentSelected'
           label='Assignment'
-          options={props.data}
+          options={assignmentData}
           selectedOption={this.state.assignmentSelected}
         />
         <div className="button-group">
