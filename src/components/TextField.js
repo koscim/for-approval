@@ -2,16 +2,18 @@ import React from 'react';
 
 const TextField = props => {
   return (
-    <label className="white-text form-center">
-      {props.label}
-      <input
-        name={props.name}
-        onChange={props.handlerFunction}
-        type="text"
-        value={props.content}
-        className="shorter-field"
-      />
-    </label>
+    <div className="form-group">
+      <label>
+        {props.label}
+        <input
+          name={props.name}
+          onChange={props.handlerFunction}
+          type="text"
+          value={props.content}
+          className="form-control"
+        />
+      </label>
+    </div>
   );
 }
 

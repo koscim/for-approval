@@ -12,12 +12,13 @@ export default class AssignmentFormContainer extends Component {
       lastName: '',
       assignment: '',
       roleSelected: '',
-      roles: ['Preparer', 'Reviewer', 'Approver']
+      roles: ['Preparer', 'Reviewer', 'Approver'],
+      assignmentSelected: ''
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.validateInputChange = this.validateInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleClearForm = this.handleClearFOrm.bind(this);
+    this.handleClearForm = this.handleClearForm.bind(this);
   }
   handleInputChange(event) {
     this.validateInputChange(event.target.value, event.target.name);
@@ -38,13 +39,15 @@ export default class AssignmentFormContainer extends Component {
   }
   handleFormSubmit(event) {
     event.preventDefault();
-    if (this.validateInputChange(this.state.firstName, 'firstName') &&
-    this.validateInputChange(this.state.lastName, 'lastName') &&
-    this.validateInputChange(this.state.roleSelected, 'roleSelected')) {
+    if (this.validateInputChange(this.state.firstName, 'firstName') &
+    this.validateInputChange(this.state.lastName, 'lastName') &
+    this.validateInputChange(this.state.roleSelected, 'role') &
+    this.validateInputChange(this.state.assignmentSelected, 'assignment')) {
       let formPayload = {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
-        roleSelected: this.state.roleSelected
+        roleSelected: this.state.roleSelected,
+        assignmentSelected: this.state.assignmentSelected
       };
       this.props.trackAssignmentPayload(formPayload);
       this.handleClearForm(event);
@@ -62,8 +65,16 @@ export default class AssignmentFormContainer extends Component {
   }
 
   render() {
+    let errorDiv;
+    let errorItems;
+    if (Object.keys(this.state.errors).length > 0) {
+      errorItems = Object.values(this.state.errors).map(error => {
+        return(<li key={error}>{error}</li>);
+      });
+      errorDiv = <div className="callout alert">{errorItems}</div>
+    }
     return (
-      <form className="callout" onSubmit={this.handleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit}>
         {errorDiv}
         <TextField
           content={this.state.firstName}
@@ -92,8 +103,8 @@ export default class AssignmentFormContainer extends Component {
           selectedOption={this.state.assignmentSelected}
         />
         <div className="button-group">
-          <button className="button" onClick={this.handleClearForm}>Clear</button>
-          <input className="button" type="submit" value="Submit" />
+          <button className="btn" onClick={this.handleClearForm}>Clear</button>
+          <input className="btn btn-primary" type="submit" value="Submit" />
         </div>
       </form>
     )

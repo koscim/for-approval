@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import AssignmentFormContainer from './AssignmentFormContainer';
-import AssignmentList from './AssignmentList';
+import AssignmentList from '../components/AssignmentList';
 
 export default class AssignmentIndexContainer extends Component {
   constructor(props) {
@@ -17,8 +17,10 @@ export default class AssignmentIndexContainer extends Component {
 
   render() {
     return (
-      <AssignmentFormContainer trackAssignmentPayload={this.trackAssignmentPayload} />
-      <AssignmentList assignmentForm={this.state.assignmentPayload} />
+      <div>
+        <AssignmentFormContainer trackAssignmentPayload={this.trackAssignmentPayload} />
+        <AssignmentList assignmentPayload={this.state.assignmentPayload} />
+      </div>
     )
   }
 }

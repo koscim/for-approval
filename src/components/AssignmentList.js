@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default const AssignmentList = props => {
+const AssignmentList = props => {
   let assignmentItems = props.assignmentPayload.map((assignment, index) => {
     return (
       <li key={index}>
@@ -21,3 +21,5 @@ export default const AssignmentList = props => {
     </div>
   );
 }
+
+export default AssignmentList;
