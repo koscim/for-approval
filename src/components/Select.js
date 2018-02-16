@@ -8,12 +8,17 @@ const Select = props => {
   })
 
   return (
-    <label>{props.label}
-      <select name={props.name} value={props.selectedOption} onChange={props.handlerFunction}>
-        <option value=""></option>
+    <div>
+      <label className="sr-only">{props.label}</label>
+      <select
+        name={props.name}
+        value={props.selectedOption}
+        onChange={props.handlerFunction}
+        className="form-control">
+        <option value="">{props.label}</option>
         {optionElements}
       </select>
-    </label>
+    </div>
   );
 }
 

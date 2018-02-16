@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Chart from '../components/Chart';
+import AssignmentIndexContainer from '../containers/AssignmentIndexContainer';
 
 const styles = {
   width: 500,
@@ -29,8 +30,8 @@ class HomeContainer extends Component {
   render() {
     return (
       <div>
-        This is a Home Component
         <div className="App-chart-container">
+          <AssignmentIndexContainer />
           <Chart />
         </div>
       </div>

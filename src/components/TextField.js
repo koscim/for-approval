@@ -2,16 +2,17 @@ import React from 'react';
 
 const TextField = props => {
   return (
-    <label className="white-text form-center">
-      {props.label}
+    <div>
+      <label className="sr-only">{props.label}</label>
       <input
         name={props.name}
         onChange={props.handlerFunction}
         type="text"
         value={props.content}
-        className="shorter-field"
+        placeholder={props.label}
+        className="form-control"
       />
-    </label>
+    </div>
   );
 }
 
