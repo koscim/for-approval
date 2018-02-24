@@ -5,12 +5,13 @@ import Axes from './LineGraph/Axes';
 import ResponsiveWrapper from '../containers/ResponsiveWrapper';
 import * as d3 from 'd3';
 import './LineGraph.css'
+import { getXScale, getYScale } from '../helpers/d3Helpers';
 
 class LineGraph extends Component {
   constructor() {
     super()
-    this.xScale = scaleBand();
-    this.yScale = scaleLinear();
+    this.getXScale = getXScale.bind(this);
+    this.getYScale = getYScale.bind(this);
   }
 
   render() {
@@ -31,25 +32,15 @@ class LineGraph extends Component {
 
     const maxValue = Math.max(...data.map(d => d.value));
 
-    // scaleBand type
-    const xScale = this.xScale
-      .padding(0.5)
-      .domain(data.map(d => d.date))
-      .range([margins.left, svgDimensions.width - margins.right]);
-
-    const yScale = this.yScale
-      .domain([0, maxValue + 20])
-      .range([svgDimensions.height - margins.bottom, margins.top]);
+    const xScale = this.getXScale(data, margins, svgDimensions, scaleBand(), 'date');
+    const yScale = this.getYScale(maxValue, margins, svgDimensions, scaleLinear());
 
     let line = d3.line()
       .x(function(d) { return xScale(d.date); })
       .y(function(d) { return yScale(d.value); })
 
-    let x = this.props.parentWidth / 2;
-    let y = (svgDimensions.height / 2);
-
     let newLine = line(data);
-    console.log(newLine);
+
     return (
       <svg width={svgDimensions.width} height={svgDimensions.height}>
         <Axes

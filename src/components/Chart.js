@@ -4,12 +4,13 @@ import data from '../data';
 import Axes from './Chart/Axes';
 import Bars from './Chart/Bars';
 import ResponsiveWrapper from '../containers/ResponsiveWrapper';
+import { getXScale, getYScale } from '../helpers/d3Helpers';
 
 class Chart extends Component {
   constructor() {
     super()
-    this.xScale = scaleBand();
-    this.yScale = scaleLinear();
+    this.getXScale = getXScale.bind(this);
+    this.getYScale = getYScale.bind(this);
   }
 
   render() {
@@ -21,15 +22,8 @@ class Chart extends Component {
 
     const maxValue = Math.max(...data.map(d => d.value));
 
-    // scaleBand type
-    const xScale = this.xScale
-      .padding(0.5)
-      .domain(data.map(d => d.employee))
-      .range([margins.left, svgDimensions.width - margins.right]);
-
-    const yScale = this.yScale
-      .domain([0, maxValue])
-      .range([svgDimensions.height - margins.bottom, margins.top]);
+    const xScale = this.getXScale(data, margins, svgDimensions, scaleBand(), 'employee');
+    const yScale = this.getYScale(maxValue, margins, svgDimensions, scaleLinear());
 
     return (
       <svg width={svgDimensions.width} height={svgDimensions.height}>
