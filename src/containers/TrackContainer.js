@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Chart from '../components/Chart';
 import PieChart from '../components/PieChart';
 import Pie from '../components/PieChart/Pie';
+import LineGraph from '../components/LineGraph';
+
 class TrackContainer extends Component {
   constructor(props) {
     super(props);
@@ -31,6 +33,9 @@ class TrackContainer extends Component {
         </div>
         <div>
           <Pie x={500} y={500} radius={radius} data={data}/>
+        </div>
+        <div>
+          <LineGraph />
         </div>
       </div>
     )
