@@ -64,12 +64,3 @@ class LineGraph extends Component {
 }
 
 export default ResponsiveWrapper(LineGraph);
-
-
-// <Bars
-//   scales={{ xScale, yScale }}
-//   margins={margins}
-//   data={data}
-//   maxValue={maxValue}
-//   svgDimensions={svgDimensions}
-// />
