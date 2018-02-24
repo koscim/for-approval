@@ -8,8 +8,8 @@ import './LineGraph.css'
 import { getXScale, getYScale } from '../helpers/d3Helpers';
 
 class LineGraph extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.getXScale = getXScale.bind(this);
     this.getYScale = getYScale.bind(this);
   }
@@ -21,25 +21,15 @@ class LineGraph extends Component {
       height: 500
     }
 
-    let data = [
-      {date: new Date(2007, 3, 24), value: 93.24},
-      {date: new Date(2007, 3, 25), value: 95.35},
-      {date: new Date(2007, 3, 26), value: 98.84},
-      {date: new Date(2007, 3, 27), value: 99.92},
-      {date: new Date(2007, 3, 30), value: 99.80},
-      {date: new Date(2007, 4,  1), value: 99.47},
-    ];
-
-    const maxValue = Math.max(...data.map(d => d.value));
-
-    const xScale = this.getXScale(data, margins, svgDimensions, scaleBand(), 'date');
+    const maxValue = Math.max(...this.props.data.map(d => d.value));
+    const xScale = this.getXScale(this.props.data, margins, svgDimensions, scaleBand(), 'date');
     const yScale = this.getYScale(maxValue, margins, svgDimensions, scaleLinear());
 
     let line = d3.line()
       .x(function(d) { return xScale(d.date); })
       .y(function(d) { return yScale(d.value); })
-
-    let newLine = line(data);
+      
+    let newLine = line(this.props.data);
 
     return (
       <svg width={svgDimensions.width} height={svgDimensions.height}>

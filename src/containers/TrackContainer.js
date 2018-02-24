@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Chart from '../components/Chart';
-import PieChart from '../components/PieChart';
 import Pie from '../components/PieChart/Pie';
 import LineGraph from '../components/LineGraph';
+import employeeData from '../data';
 
 class TrackContainer extends Component {
   constructor(props) {
@@ -17,6 +17,15 @@ class TrackContainer extends Component {
     let x = width / 2;
     let y = height / 2;
     let data = [5, 2, 7, 1, 1, 3, 4, 9];
+    let barchartData = employeeData;
+    let linegraphData = [
+      {date: new Date(2007, 3, 24), value: 93.24},
+      {date: new Date(2007, 3, 25), value: 95.35},
+      {date: new Date(2007, 3, 26), value: 98.84},
+      {date: new Date(2007, 3, 27), value: 99.92},
+      {date: new Date(2007, 3, 30), value: 99.80},
+      {date: new Date(2007, 4,  1), value: 99.47},
+    ];
     return (
       <div>
         <div className="jumbotron">
@@ -29,13 +38,13 @@ class TrackContainer extends Component {
           </p>
         </div>
         <div className="App-chart-container">
-          <Chart />
+          <Chart data={barchartData}/>
         </div>
         <div>
           <Pie x={500} y={500} radius={radius} data={data}/>
         </div>
         <div>
-          <LineGraph />
+          <LineGraph data={linegraphData}/>
         </div>
       </div>
     )
