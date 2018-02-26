@@ -37,6 +37,11 @@ class TrackContainer extends Component {
             <a className="btn btn-primary btn-lg" href="#" role="button">See Details</a>
           </p>
         </div>
+        <select className="form-control form-control-lg">
+          <option>Bar Chart</option>
+          <option>Pie Chart</option>
+          <option>Line Graph</option>
+        </select>
         <div className="App-chart-container">
           <Chart data={barchartData}/>
         </div>
