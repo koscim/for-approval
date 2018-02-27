@@ -14,7 +14,7 @@ const Select = props => {
         name={props.name}
         value={props.selectedOption}
         onChange={props.handlerFunction}
-        className="form-control">
+        className="form-control form-control-lg">
         <option value="">{props.label}</option>
         {optionElements}
       </select>
