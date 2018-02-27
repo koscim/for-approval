@@ -1,4 +1,4 @@
-export default [
+export const employeeData = [
   { employee: 'John Smith', value: 21, year: 1984 },
   { employee: 'Leslie Knope', value: 81, year: 1985 },
   { employee: 'Jim John', value: 25, year: 1987 },

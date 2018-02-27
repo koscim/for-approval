@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Select from '../components/Select';
 import TextField from '../components/TextField';
 import { assignmentData } from '../assignmentData';
-import data from '../data';
+import { employeeData } from '../data';
 
 export default class AssignmentFormContainer extends Component {
   constructor(props) {
@@ -61,7 +61,7 @@ export default class AssignmentFormContainer extends Component {
   }
 
   render() {
-    let employees = data.map((employee, index) => {
+    let employees = employeeData.map((employee, index) => {
       return (
         employee.employee
       );

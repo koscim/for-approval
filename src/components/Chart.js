@@ -4,10 +4,11 @@ import Axes from './Chart/Axes';
 import Bars from './Chart/Bars';
 import ResponsiveWrapper from '../containers/ResponsiveWrapper';
 import { getXScale, getYScale } from '../helpers/d3Helpers';
+import { employeeData } from '../data';
 
 class Chart extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.getXScale = getXScale.bind(this);
     this.getYScale = getYScale.bind(this);
   }
@@ -18,10 +19,9 @@ class Chart extends Component {
       width: Math.max(this.props.parentWidth, 300),
       height: 500
     }
+    const maxValue = Math.max(...employeeData.map(d => d.value));
 
-    const maxValue = Math.max(...this.props.data.map(d => d.value));
-
-    const xScale = this.getXScale(this.props.data, margins, svgDimensions, scaleBand(), 'employee');
+    const xScale = this.getXScale(employeeData, margins, svgDimensions, scaleBand(), 'employee');
     const yScale = this.getYScale(maxValue, margins, svgDimensions, scaleLinear());
 
     return (
@@ -34,7 +34,7 @@ class Chart extends Component {
         <Bars
           scales={{ xScale, yScale }}
           margins={margins}
-          data={this.props.data}
+          data={employeeData}
           maxValue={maxValue}
           svgDimensions={svgDimensions}
         />

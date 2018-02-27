@@ -3,12 +3,10 @@ import React, { Component } from 'react'
 export default ChartComponent => (
   class ResponsiveChart extends Component {
     constructor(props) {
-      super(props)
-
+      super(props);
       this.state = {
         containerWidth: null,
       }
-
       this.fitParentContainer = this.fitParentContainer.bind(this)
     }
 
@@ -37,7 +35,6 @@ export default ChartComponent => (
 
     renderChart() {
       const parentWidth = this.state.containerWidth
-
       return (
         <ChartComponent {...this.props} parentWidth={parentWidth} />
       )

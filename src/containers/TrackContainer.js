@@ -2,11 +2,20 @@ import React, { Component } from 'react';
 import Chart from '../components/Chart';
 import Pie from '../components/PieChart/Pie';
 import LineGraph from '../components/LineGraph';
-import employeeData from '../data';
+import Select from '../components/Select';
 
 class TrackContainer extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      options: ['Bar Chart', 'Pie Chart', 'Line Graph'],
+      chartSelected: 'Bar Chart'
+    };
+    this.handleInputChange = this.handleInputChange.bind(this);
+  }
+
+  handleInputChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   render() {
@@ -17,7 +26,6 @@ class TrackContainer extends Component {
     let x = width / 2;
     let y = height / 2;
     let data = [5, 2, 7, 1, 1, 3, 4, 9];
-    let barchartData = employeeData;
     let linegraphData = [
       {date: new Date(2007, 3, 24), value: 93.24},
       {date: new Date(2007, 3, 25), value: 95.35},
@@ -26,6 +34,17 @@ class TrackContainer extends Component {
       {date: new Date(2007, 3, 30), value: 99.80},
       {date: new Date(2007, 4,  1), value: 99.47},
     ];
+    let chart;
+    if (this.state.chartSelected === 'Bar Chart') {
+      chart = <Chart />;
+    } else if (this.state.chartSelected === 'Pie Chart') {
+      chart = <Pie x={500} y={500} radius={radius} data={data}/>
+    } else if (this.state.chartSelected === 'Line Graph') {
+      chart = <LineGraph data={linegraphData}/>
+    } else {
+      chart = null;
+    }
+
     return (
       <div>
         <div className="jumbotron">
@@ -37,19 +56,14 @@ class TrackContainer extends Component {
             <a className="btn btn-primary btn-lg" href="#" role="button">See Details</a>
           </p>
         </div>
-        <select className="form-control form-control-lg">
-          <option>Bar Chart</option>
-          <option>Pie Chart</option>
-          <option>Line Graph</option>
-        </select>
+        <Select
+          name='chartSelected'
+          selectedOption={this.state.chartSelected}
+          handlerFunction={this.handleInputChange}
+          options={this.state.options}
+        />
         <div className="App-chart-container">
-          <Chart data={barchartData}/>
-        </div>
-        <div>
-          <Pie x={500} y={500} radius={radius} data={data}/>
-        </div>
-        <div>
-          <LineGraph data={linegraphData}/>
+          {chart}
         </div>
       </div>
     )
